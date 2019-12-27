@@ -10,17 +10,16 @@ function checker(m,s1,str){
 		"\'": "&apos;"
 	};
 	return htmlEntities.hasOwnProperty(m) ? 
-		   				          htmlEntities[m] :
-		   				          m;
+		   	      htmlEntities[m] :
+		   	      m;
 };
 
 function convertHTML(str) {
   // &colon;&rpar;
   let splitUp = str.split('');
   let insertEntity = splitUp
-  						        .map(char => char.replace(char, checker(char)))
-  						        .join('');
-
+  		 	.map(char => char.replace(char, checker(char)))
+  			.join('');
   return insertEntity;
 }
 
